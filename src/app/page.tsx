@@ -18,6 +18,12 @@ export default function Home() {
         <Link href="/confirm" className="btn-secondary">
           예약 확인하기
         </Link>
+        <Link
+          href="/admin"
+          className="block text-center text-xs text-brand-400 underline-offset-2 hover:underline"
+        >
+          사장님 전용 · 예약 관리
+        </Link>
       </div>
     </main>
   );
