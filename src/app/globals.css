@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui,
+    "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(35%) sepia(20%) saturate(800%) hue-rotate(355deg)
+    brightness(85%) contrast(85%);
+  cursor: pointer;
+}
+
+@layer components {
+  .field-label {
+    @apply mb-1.5 block text-sm font-medium text-brand-700;
+  }
+  .field-required::after {
+    content: " *";
+    @apply text-red-500;
+  }
+  .field-input {
+    @apply w-full rounded-xl border border-cream-200 bg-white px-4 py-3 text-base text-brand-900 placeholder:text-brand-300 shadow-sm transition focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-200 disabled:cursor-not-allowed disabled:bg-cream-100;
+  }
+  .field-helper {
+    @apply mt-1.5 text-xs text-brand-500;
+  }
+  .field-error {
+    @apply mt-1.5 text-xs text-red-500;
+  }
+  .btn-primary {
+    @apply inline-flex w-full items-center justify-center rounded-xl bg-brand-500 px-5 py-3.5 text-base font-semibold text-cream-50 shadow-card transition hover:bg-brand-600 active:bg-brand-700 disabled:cursor-not-allowed disabled:bg-brand-200;
+  }
+  .btn-secondary {
+    @apply inline-flex w-full items-center justify-center rounded-xl border border-brand-300 bg-white px-5 py-3.5 text-base font-semibold text-brand-700 transition hover:bg-cream-100;
+  }
+}
